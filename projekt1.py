@@ -31,6 +31,8 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 
+oddelovac = "*" * 30
+print(oddelovac)
 print("Vítejte!")
 jmeno = input("Zadejte uživatelské jméno: ",) 
 heslo = input("Zadejte heslo: ")
@@ -44,10 +46,11 @@ if user in hodnoty:
     print("Jste přihlášeni")
 else:
     print("Nejste registrováni")
-
+print(oddelovac)
 #vybereme text
 print("Jsou k dispozici 3 testy k analýze.")
 raw_text = TEXTS[int(input("Zvolte čílo v rozsahu 1 až 3: "))-1]
+print(oddelovac)
 #separujeme jednotlivá slova
 raw_slova =raw_text.split()
 
@@ -57,21 +60,21 @@ for slovo in raw_slova:
     if slovo.istitle() and slovo.isalpha():
         title.append(slovo)
 pocet = len(title)
-
+print("V textu je ", pocet, "slov.")
 #slova psaná velkými písmeny
 upper = []
 for slovo in raw_slova:
     if slovo.isupper():
         upper.append(slovo)
 pocet_upper = len(upper)
-
+print("V textu začíná", pocet_upper, "slov velkým písmenem.")
 #slova psaná malými písmeny
 lower = []
 for slovo in raw_slova:
     if slovo.islower():
         lower.append(slovo)
 pocet_lower = len(lower)
-
+print("V textu je psáno", pocet_lower, "slov malým písmenem.")
 #počet čísel
 cisla = []
 for slovo in raw_slova:
@@ -79,7 +82,7 @@ for slovo in raw_slova:
         cisla.append(slovo)
 
 pocet_cisel = len(cisla)
-
+print("V textu se vyskytuje", pocet_cisel, "čísel(a).")
 
 #graf
 seznam = []
@@ -101,4 +104,4 @@ for i in delky:
 soucet = 0
 for i in cisla:
     soucet = soucet + int(i) 
-
+print(oddelovac)
