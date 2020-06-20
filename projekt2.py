@@ -1,11 +1,11 @@
 # Definice šachovnice
-theBoard = {'7': ' ', '8': ' ', '9': ' ',
+Board = {'7': ' ', '8': ' ', '9': ' ',
             '4': ' ', '5': ' ', '6': ' ',
             '1': ' ', '2': ' ', '3': ' '}
 
 board_keys = []
 
-for key in theBoard:
+for key in Board:
     board_keys.append(key)
 
 
@@ -23,13 +23,13 @@ def game():
     count = 0
 
     for i in range(10):
-        printBoard(theBoard)
+        printBoard(Board)
         print("It's your turn," + turn + ".Which one to move?")
 
         move = input()
 
-        if theBoard[move] == ' ':
-            theBoard[move] = turn
+        if Board[move] == ' ':
+            Board[move] = turn
             count += 1
         else:
             print("That place is already filled.\nWhich one to move")
@@ -37,43 +37,43 @@ def game():
 
         # Lovest cout to win is 5, so since 5th move there will be check if any player won.
         if count >= 5:
-            if theBoard['7'] == theBoard['8'] == theBoard['9'] != ' ':  # across the top
-                printBoard(theBoard)
+            if Board['7'] == Board['8'] == Board['9'] != ' ':  # across the top
+                printBoard(Board)
                 print("\nGame Over.\n")
                 print(" Player" + turn + " won.")
                 break
-            elif theBoard['4'] == theBoard['5'] == theBoard['6'] != ' ':  # across the middle
-                printBoard(theBoard)
+            elif Board['4'] == Board['5'] == Board['6'] != ' ':  # across the middle
+                printBoard(Board)
                 print("\nGame Over.\n")
                 print(" Player" + turn + " won.")
                 break
-            elif theBoard['1'] == theBoard['2'] == theBoard['3'] != ' ':  # across the bottom
-                printBoard(theBoard)
+            elif Board['1'] == Board['2'] == Board['3'] != ' ':  # across the bottom
+                printBoard(Board)
                 print("\nGame Over.\n")
                 print(" Player" + turn + " won.")
                 break
-            elif theBoard['1'] == theBoard['4'] == theBoard['7'] != ' ':  # down the left side
-                printBoard(theBoard)
+            elif Board['1'] == Board['4'] == Board['7'] != ' ':  # down the left side
+                printBoard(Board)
                 print("\nGame Over.\n")
                 print(" Player" + turn + " won.")
                 break
-            elif theBoard['2'] == theBoard['5'] == theBoard['8'] != ' ':  # down the middle
-                printBoard(theBoard)
+            elif Board['2'] == Board['5'] == Board['8'] != ' ':  # down the middle
+                printBoard(Board)
                 print("\nGame Over.\n")
                 print(" Player" + turn + " won.")
                 break
-            elif theBoard['3'] == theBoard['6'] == theBoard['9'] != ' ':  # down the right side
-                printBoard(theBoard)
+            elif Board['3'] == Board['6'] == Board['9'] != ' ':  # down the right side
+                printBoard(Board)
                 print("\nGame Over.\n")
                 print(" Player" + turn + " won.")
                 break
-            elif theBoard['7'] == theBoard['5'] == theBoard['3'] != ' ':  # diagonal
-                printBoard(theBoard)
+            elif Board['7'] == Board['5'] == Board['3'] != ' ':  # diagonal
+                printBoard(Board)
                 print("\nGame Over.\n")
                 print(" Player" + turn + " won.")
                 break
-            elif theBoard['1'] == theBoard['5'] == theBoard['9'] != ' ':  # diagonal
-                printBoard(theBoard)
+            elif Board['1'] == Board['5'] == Board['9'] != ' ':  # diagonal
+                printBoard(Board)
                 print("\nGame Over.\n")
                 print(" Player" + turn + " won.")
                 break
@@ -88,6 +88,4 @@ def game():
             turn = 'O'
         else:
             turn = 'X'
-
-if __name__ == "__main__":
-    game()
+game()
